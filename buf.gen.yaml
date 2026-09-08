@@ -1,0 +1,13 @@
+version: v2
+clean: true
+managed:
+  enabled: true
+  override:
+    - file_option: go_package_prefix
+      value: mtobject/sdr/protos
+plugins:
+ - local: protoc-gen-go
+   out: gen/protos
+   opt: paths=source_relative,default_api_level=API_OPAQUE
+inputs:
+ - directory: proto
